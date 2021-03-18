@@ -1,4 +1,4 @@
-# URlSite
+# URLSite
 Для работы необходимо установить модули:
 - hashids (npm i hashids)
 - express (npm install express --save)

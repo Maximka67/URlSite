@@ -1,0 +1,51 @@
+<script>
+    function copyToClipboard() {
+        var copyText = document.getElementById('copyFromId');
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        alert("Ссылка скопирована: " + copyText.value);
+    }
+</script>
+
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>Сокращение ссылок</title>
+        <link href="/bootstrap.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="row ">
+            <div class="mx-auto bg-light">
+                <div class="text-center font-weight-bold text-primary">
+                    Short URL
+                </div>
+                <p>
+                    Ваша сокращенная ссылка:  
+                </p>
+                <form >
+                    <div>
+                        <label>Cсылка:</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="copyFromId" value="http://localhost:3000/<%= data %>">
+                            <span class="input-group-btn">
+                                <button onclick="copyToClipboard()" class="btn btn-default">Скопировать URL</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+<!-- <div class="input-group">
+
+    <input type="text" class="form-control">
+    <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Вперед!</button>
+      </span>
+</div> -->
